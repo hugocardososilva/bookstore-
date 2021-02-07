@@ -5,6 +5,9 @@ ruby '2.7.0'
 
 #set gems
 gem 'mongoid'
+gem 'activeadmin'
+gem 'devise'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
@@ -34,6 +37,13 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 4.0.2'
+  gem 'ffaker'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
+  gem 'database_cleaner-mongoid'
+  gem 'rubycritic'
+  gem 'simplecov'
 end
 
 group :development do
