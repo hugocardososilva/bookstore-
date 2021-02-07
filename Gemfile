@@ -45,6 +45,8 @@ group :development, :test do
   gem 'database_cleaner-mongoid'
   gem 'rubycritic'
   gem 'simplecov'
+  gem 'shoulda'
+  gem 'shoulda-matchers'
 end
 
 group :development do
