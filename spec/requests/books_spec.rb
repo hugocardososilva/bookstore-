@@ -18,7 +18,7 @@ RSpec.describe '/books', type: :request do
   # Book. As you add validations to Book, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do
-    FactoryBot.build(:book).attributes.symbolize_keys
+    FactoryBot.build(:book, author: FactoryBot.create(:author)).attributes.symbolize_keys
   end
 
   let(:invalid_attributes) do
@@ -87,7 +87,7 @@ RSpec.describe '/books', type: :request do
   describe 'PATCH /update' do
     context 'with valid parameters' do
       let(:new_attributes) do
-        FactoryBot.build(:book).attributes.symbolize_keys
+        FactoryBot.build(:book, author: FactoryBot.create(:author)).attributes.symbolize_keys
       end
 
       it 'updates the requested book' do

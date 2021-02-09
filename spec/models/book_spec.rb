@@ -1,7 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe Book, type: :model do
+RSpec.describe Book do
   context 'validations ' do
-    it{ should validate_presence_of(:title) }
+    it { should validate_presence_of(:title) }
+  end
+  context 'associations ' do
+    xit { is_expected.to belong_to(:author) }
   end
 end
