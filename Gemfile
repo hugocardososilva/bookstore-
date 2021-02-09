@@ -7,8 +7,9 @@ ruby '2.7.0'
 gem 'mongoid'
 gem 'activeadmin'
 gem 'devise'
-gem "twitter-bootstrap-rails"
-gem "jquery-rails"
+gem 'twitter-bootstrap-rails'
+gem 'jquery-rails'
+gem 'ransack'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
@@ -64,6 +65,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'mongoid-rspec'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
