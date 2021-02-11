@@ -1,4 +1,4 @@
-require 'database_cleaner'
+require 'database_cleaner/mongoid'
 
 RSpec.configure do |config|
   # Clean up the database
