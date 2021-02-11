@@ -4,6 +4,7 @@ class Book < MongoidDocument
   field :active, type: Mongoid::Boolean
 
   belongs_to :author
+  has_many :images, dependent: :destroy
 
   validates :title, presence: true
 end
