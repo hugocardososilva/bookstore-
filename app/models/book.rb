@@ -8,6 +8,6 @@ class Book < MongoidDocument
 
   validates :title, presence: true
 
-  accepts_nested_attributes_for :images, :author
+  accepts_nested_attributes_for :images
 
 end
