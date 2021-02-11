@@ -16,11 +16,11 @@ RSpec.describe "/authors", type: :request do
   # Author. As you add validations to Author, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    FactoryBot.build(:author).attributes.symbolize_keys
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    FactoryBot.build(:author, name:nil ).attributes.symbolize_keys
   }
 
   describe "GET /index" do
@@ -85,14 +85,15 @@ RSpec.describe "/authors", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        FactoryBot.build(:author).attributes.symbolize_keys
       }
 
       it "updates the requested author" do
         author = Author.create! valid_attributes
         patch author_url(author), params: { author: new_attributes }
         author.reload
-        skip("Add assertions for updated state")
+        expect(author.name).to eq(new_attributes[:name])
+        expect(response).to redirect_to(author_url(author))
       end
 
       it "redirects to the author" do
