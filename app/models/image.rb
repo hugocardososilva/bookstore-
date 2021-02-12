@@ -1,6 +1,6 @@
 class Image < MongoidDocument
   field :title, type: String
-  field :upload, type: String
+  mount_uploader :image, ImageUploader
 
-  belongs_to :book
+  belongs_to :book, inverse_of: :images
 end

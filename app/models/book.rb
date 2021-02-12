@@ -4,10 +4,10 @@ class Book < MongoidDocument
   field :active, type: Mongoid::Boolean
 
   belongs_to :author
-  has_many :images, dependent: :destroy
+  has_many :images, inverse_of: :book
 
   validates :title, presence: true
 
-  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :images, allow_destroy: true
 
 end
