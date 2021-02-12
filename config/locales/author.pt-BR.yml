@@ -1,0 +1,14 @@
+---
+pt-BR:
+  mongoid:
+    models:
+      author:
+        one: "Autor"
+        other: "Autores"
+    attributes:
+      author:
+        name: "nome"
+        email: "email"
+        books: "Livros"
+        created_at: "Criado"
+        updated_at: "Atualizado"
