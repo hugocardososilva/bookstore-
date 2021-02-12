@@ -1,25 +1,25 @@
-require 'database_cleaner'
+require 'database_cleaner/mongoid'
 
 RSpec.configure do |config|
   # Clean up the database
   config.before(:suite) do
-    DatabaseCleaner.clean_with :truncation
+    DatabaseCleaner[:mongoid].clean_with :deletion
   end
 
   config.before(:each) do
-    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner[:mongoid].strategy = :deletion
   end
 
   config.before(:each, :js => true) do
-    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner[:mongoid].strategy = :deletion
   end
 
   config.before(:each, :database) do
     # open transaction
-    DatabaseCleaner.start
+    DatabaseCleaner[:mongoid].start
   end
 
   config.after(:each, :database) do
-    DatabaseCleaner.clean
+    DatabaseCleaner[:mongoid].clean
   end
 end
