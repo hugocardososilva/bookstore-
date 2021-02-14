@@ -1,5 +1,7 @@
 RailsAdmin.config do |config|
-
+  config.main_app_name = ["Livraria", ""]
+  config.authorize_with :cancancan, Ability
+  config.parent_controller = 'ApplicationController'
   ### Popular gems integration
 
   ## == Devise ==
@@ -37,5 +39,19 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+  end
+
+  config.model Book do
+    navigation_icon 'fa fa-book'
+  end
+  config.model Image do
+    navigation_icon 'fa fa-user'
+    visible false
+  end
+  config.model Author do
+    navigation_icon 'fa fa-user'
+  end
+  config.model User do
+    navigation_icon 'fa fa-user'
   end
 end
