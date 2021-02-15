@@ -1,5 +1,6 @@
 class BooksController < InheritedResources::Base
 
+
   private
 
     def book_params

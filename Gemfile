@@ -15,6 +15,7 @@ gem 'devise'
 gem 'cancancan'
 gem 'draper'
 gem 'pundit'
+gem 'kaminari'
 gem 'kaminari-mongoid'
 
 gem 'carrierwave'
