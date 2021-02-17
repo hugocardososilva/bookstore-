@@ -22,7 +22,7 @@ class Book
       book =
       book = Book.by_title(search)
       book += Book.by_author(search)
-      book.uniq
+      Book.where(:id.in => book.uniq.pluck(:_id))
     else
       Book.all
     end
