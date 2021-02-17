@@ -9,7 +9,6 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.persisted?
       can :manage, :all
-      can :access, :rails_admin
     else
       can :read, :books
     end

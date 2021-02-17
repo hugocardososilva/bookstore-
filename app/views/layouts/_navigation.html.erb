@@ -1,14 +1,26 @@
-<nav class="navbar navbar-dark navbar-static-top navbar-expand-md">
-  <div class="container">
-    <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span>
-    </button> <%= link_to "Everything Sharks", root_path, class: 'navbar-brand' %>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav mr-auto">
-        <li class='nav-item'><%= link_to 'Home', books_path, class: 'nav-link' %></li>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">BookTest</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class='nav-item'><%= link_to 'Home', root_path, class: 'nav-link' %></li>
 
-        </li>
-      </ul>
-    </div>
+      <% if current_user %>
+        <li class='nav-item'><%= link_to 'Dashboard', rails_admin_path, class: 'nav-link' %></li>
+      <% end %>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <% if current_user %>
+        <li class='nav-item'><%= link_to 'Logout', destroy_user_session_path, class: 'nav-link' %></li>
+      <% else %>
+        <ul class="navbar-nav mr-auto">
+          <li class='nav-item'><%= link_to 'Login', new_user_session_path, class: 'nav-link' %></li>
+        </ul>
+      <% end %>
+    </form>
   </div>
 </nav>
