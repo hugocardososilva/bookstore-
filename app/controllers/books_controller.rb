@@ -3,13 +3,13 @@ class BooksController < InheritedResources::Base
 
   def index
    @current_page = params[:page]
-   @books = Book.page(@current_page).per(3)
+   @books = Book.search(params[:search]).page(@current_page).per(3)
   end
 
   private
 
   def book_params
-    params.require(:book).permit(:title, :description, :active, :author_id)
+    params.require(:book).permit(:title, :description, :active, :author_id, :search)
   end
 
 end
