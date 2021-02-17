@@ -13,4 +13,20 @@ class Book
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
+  scope :by_title, ->(term) { where(title: /#{term}/i) }
+  scope :by_author, ->(term) { where(:author_id.in => Author.by_name(term).pluck(:_id)) }
+  scope :active, ->{ where( active: true ) }
+
+  def self.search(search)
+    if search
+      book =
+      book = Book.by_title(search)
+      book += Book.by_author(search)
+      Book.where(:id.in => book.uniq.pluck(:_id))
+    else
+      Book.all
+    end
+  end
+
+
 end
