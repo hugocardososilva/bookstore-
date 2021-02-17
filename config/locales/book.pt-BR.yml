@@ -10,5 +10,6 @@ pt-BR:
         title: "Título"
         description: "Descrição"
         active: "Ativo"
+        author: "Autor"
         created_at: "Criado"
         updated_at: "Atualizado"
