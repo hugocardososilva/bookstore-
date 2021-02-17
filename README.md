@@ -1,24 +1,45 @@
-# README
+# Book Test
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple bookstore challenge following the requirements provided..
 
-Things you may want to cover:
+The project was created using version 6.0.3 of Rails with version 2.7.0 of ruby
 
-* Ruby version
+Some gems with features used in the project:
 
-* System dependencies
+* Rails Admin ( Dashboard )
 
-* Configuration
+* MongoID ( Database )
 
-* Database creation
+* Kanimari ( Pagination )
 
-* Database initialization
+* Devise ( Authentication )
 
-* How to run the test suite
+* Cancancan ( Authorization )
 
-* Services (job queues, cache servers, search engines, etc.)
+# installation
+After cloning the repository:
 
-* Deployment instructions
+`bundle install`
 
+`yarn install`
+
+`rails db:seed`
+
+Current test coverage is 95.45%
+To generate a coverage report, simply run `bundle exec rspec` and view the index.html in the /coverage directory
+
+Current test quality is 98.13%
+To generate a quality report, simply run `rubycritic` 
+
+
+#Access
+
+To access the administrative panel, start the application (if it is in the development environment, 0.0.0.0:3000)
+/admin
+
+The app will require a login, which can be done with the following credentials:
+
+**email: admin@example.com
+
+password: 12345**
 * ...
