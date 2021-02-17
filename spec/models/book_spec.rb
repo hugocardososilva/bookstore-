@@ -22,6 +22,18 @@ RSpec.describe Book do
       expect(Book.by_author("Jose").count).to eq(0)
     end
   end
+  context 'search' do
+    before do
+      2.times do |t|
+        author = FactoryBot.create(:author, name:"Joao")
+        FactoryBot.create(:book, title: "Book #{t}", author: author)
+      end
+    end
+    it { expect(Book.search("Book").count).to eq(2) }
+    it { expect(Book.search("Test").count).to eq(0) }
+    it { expect(Book.search("Joao").count).to eq(6) }
+    it { expect(Book.search("Jose").count).to eq(0) }
+  end
 
   context 'associations ' do
     it { is_expected.to be_mongoid_document }
