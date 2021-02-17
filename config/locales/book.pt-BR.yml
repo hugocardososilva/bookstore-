@@ -1,0 +1,15 @@
+---
+pt-BR:
+  mongoid:
+    models:
+      book:
+        one: "Livro"
+        other: "Livros"
+    attributes:
+      book:
+        title: "Título"
+        description: "Descrição"
+        active: "Ativo"
+        author: "Autor"
+        created_at: "Criado"
+        updated_at: "Atualizado"

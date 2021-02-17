@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Livros</h1>
+<div class="right">
+  <%= form_tag(books_path, method: :get) do %>
+    <%= text_field_tag(:search, params[:search])  %>
+    <%= submit_tag ( "Pesquisar por Título ou Autor")  %>
+  <% end %>
+</div>
+
+
+<div class="table-responsive">
+  <table id="book"  class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col" colspan="2"></th>
+        <th scope="col"><%= t '.title' %></th>
+        <th scope="col"><%= t '.description' %></th>
+        <th scope="col"><%= t '.author' %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td  colspan="2">
+            <figure class="figure">
+              <img src=<%= "#{book.images.last ? book.images.last.url : '/book-default.jpg' }" %> class="figure-img img-fluid rounded">
+            </figure>
+          </td>
+          <td><%= book.title %></td>
+          <td><%= book.description %></td>
+          <td><%= book.author.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+    <tfoot>
+     <%= paginate @books %>
+    </tfoot>
+  </table>
+</div>
+<ul class="pagination">
+  <%= paginate @books %>
+</ul>
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('#book').DataTable();
+	});
+</script>
+

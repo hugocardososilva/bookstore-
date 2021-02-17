@@ -6,6 +6,26 @@ ruby '2.7.0'
 #set gems
 gem 'mongoid'
 
+gem 'devise'
+gem 'twitter-bootstrap-rails'
+gem 'jquery-rails'
+
+gem 'rails_admin'
+gem 'devise'
+gem 'cancancan'
+gem 'cancancan-mongoid'
+gem 'draper'
+gem 'pundit'
+gem 'kaminari'
+gem 'kaminari-mongoid'
+
+gem 'carrierwave'
+gem 'carrierwave-mongoid'
+
+gem 'inherited_resources'
+
+gem 'rails_admin_rollincode'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use sqlite3 as the database for Active Record
@@ -34,6 +54,12 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 4.0.2'
+  gem 'ffaker'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner-mongoid'
+  gem 'rubycritic'
+  gem 'simplecov'
 end
 
 group :development do
@@ -51,6 +77,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'mongoid-rspec'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

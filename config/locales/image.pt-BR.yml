@@ -1,0 +1,11 @@
+---
+pt-BR:
+  mongoid:
+    models:
+      image:
+        one: "Imagem"
+        other: "Imagens"
+    attributes:
+      image:
+        tile: "Título"
+        url: "Link"
