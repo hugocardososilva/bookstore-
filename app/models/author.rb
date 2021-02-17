@@ -9,6 +9,6 @@ class Author
 
   has_many :books
 
-
+  scope :by_name, ->(term) { where(name: /#{term}/i) }
 
 end
