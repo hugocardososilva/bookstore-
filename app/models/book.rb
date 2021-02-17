@@ -13,4 +13,9 @@ class Book
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
+  scope :by_title, ->(term) { where(title: /#{term}/i) }
+  scope :by_author, ->(term) { where(:author_id.in => Author.by_name(term).pluck(:_id)) }
+  scope :active, ->{ where( active: true ) }
+
+
 end
